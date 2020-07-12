@@ -38,6 +38,7 @@ module Speak
 #Getter and Setter
 
 class GoodDog
+  attr_accessor :name 
   def initialize(name)  #name is an instance variable, It keeps track of state of object
     @name =name
   end
@@ -46,11 +47,11 @@ class GoodDog
     puts "#{@name} says Arf!"    #It also exposes behavior of a class to object
   end
 
-  def getter
+  def getter  #Getter instance Method
     puts @name
   end
 
-  def setter=(name)
+  def setter=(name)  #Setter instance Method
     @name = name
 
   end
