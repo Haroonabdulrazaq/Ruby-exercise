@@ -79,11 +79,15 @@ class MyCar
     @speed  =0
     puts "Parking!!!"
   end
+  def spray_paint(c)
+    self.color = c
+    puts "Car paint modifed to #{c} successfully"
+  end
   def gen_info
     "Designed in the year: #{@year},my color is: #{@color}, my model is: #{@model}"
   end
 end
 volvo = MyCar.new(2018,"Blue", "velvet")
 puts volvo.gen_info
- volvo.color= "Red"  
  volvo.year 
+ volvo.spray_paint("lawngreen")
