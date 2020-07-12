@@ -44,25 +44,46 @@ class GoodDog
   end
 
   def speak     #Speak is an instance method, It keeps track of the behavior of an object 
-    puts "#{@name} says Arf!"    #It also exposes behavior of a class to object
+    puts "#{name} says Arf!"    #It also exposes behavior of a class to object
   end
-
-  def getter  #Getter instance Method
-    puts @name
-  end
-
-  def setter=(name)  #Setter instance Method
-    @name = name
-
-  end
-
-
 
 end
 
 sparky = GoodDog.new("Sparky")
 sparky.speak
-sparky.getter
-sparky.setter = "Fido"
-sparky.getter
+puts sparky.name
+sparky.name = "Fido"
+puts sparky.name
 
+#Exercise
+
+class MyCar
+  attr_accessor :color
+  attr_reader :year
+  def initialize(year,color,model)
+    @year = year
+    @color = color
+    @model= model
+    @speed = 0 
+  end
+
+  def speed_up(number)
+    @speed = numberspeed_up
+    puts "Step on it man, you're accelerating to #{number}mph"
+  end
+  def brake(number)
+    @speed -= number
+    puts "Braking!!, you're deccelerating by #{number}mph"
+  end
+  def shot_off
+    @speed  =0
+    puts "Parking!!!"
+  end
+  def gen_info
+    "Designed in the year: #{@year},my color is: #{@color}, my model is: #{@model}"
+  end
+end
+volvo = MyCar.new(2018,"Blue", "velvet")
+puts volvo.gen_info
+ volvo.color= "Red"  
+ volvo.year 
