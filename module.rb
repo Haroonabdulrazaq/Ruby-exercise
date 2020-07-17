@@ -2,7 +2,7 @@ module Speak
     def speak(sound)
       puts "#{sound}"
     end
-  end
+end
   
   class GoodDog
     include Speak
@@ -32,28 +32,41 @@ module Speak
     include Automobile
   end
 
-  volvo = Car.new
-  volvo.Inform("Volvo", 2013)
+  # volvo = Car.new
+  # volvo.Inform("Volvo", 2013)
  
 #Getter and Setter
+ #GoodDog Class
 
-class GoodDog
-  attr_accessor :name 
-  def initialize(name)  #name is an instance variable, It keeps track of state of object
-    @name =name
+ class GoodDog
+  attr_accessor :name, :height, :weight
+
+  def initialize(n, h, w)
+    self.name   = n
+    self.height = h
+    self.weight = w
   end
 
-  def speak     #Speak is an instance method, It keeps track of the behavior of an object 
-    puts "#{name} says Arf!"    #It also exposes behavior of a class to object
+  def change_info(n, h, w)
+    self.name   = n
+    self.height = h
+    self.weight = w
   end
+
+  def info
+    "#{self.name} weighs #{self.weight}lbs and is #{self.height}cm tall."
+  end
+
+ def what_is_self
+  self
+ end
 
 end
 
-sparky = GoodDog.new("Sparky")
-sparky.speak
-puts sparky.name
-sparky.name = "Fido"
-puts sparky.name
+sparky = GoodDog.new("Sparky",45, 68) 
+puts sparky.info
+
+
 
 #Exercise
 
@@ -87,7 +100,13 @@ class MyCar
     "Designed in the year: #{@year},my color is: #{@color}, my model is: #{@model}"
   end
 end
-volvo = MyCar.new(2018,"Blue", "velvet")
-puts volvo.gen_info
- volvo.year 
- volvo.spray_paint("lawngreen")
+# volvo = MyCar.new(2018,"Blue", "velvet")
+# puts volvo.gen_info
+#  volvo.year 
+#  volvo.spray_paint("lawngreen")
+
+
+
+
+
+ 
