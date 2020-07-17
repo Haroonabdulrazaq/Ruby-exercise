@@ -80,6 +80,10 @@ class MyCar
     @speed = 0 
   end
 
+  def self.calc_gas_mileage(gallons, miles)
+    puts "#{miles / gallons} miles per gallon of gas"
+  end
+
   def speed_up(number)
     @speed = numberspeed_up
     puts "Step on it man, you're accelerating to #{number}mph"
@@ -100,10 +104,13 @@ class MyCar
     "Designed in the year: #{@year},my color is: #{@color}, my model is: #{@model}"
   end
 end
-# volvo = MyCar.new(2018,"Blue", "velvet")
-# puts volvo.gen_info
-#  volvo.year 
-#  volvo.spray_paint("lawngreen")
+volvo = MyCar.new(2018,"Blue", "velvet")
+puts volvo.gen_info
+ volvo.year 
+ volvo.spray_paint("lawngreen")
+
+ MyCar.calc_gas_mileage(9,90)
+
 
 
 
